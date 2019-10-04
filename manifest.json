@@ -1,0 +1,13 @@
+{
+  "name": "Postory",
+  "version": "0.1",
+  "description": "Postory extension - track packages",
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["*://www.fedex.com/apps/fedextrack/*"],
+      "js": ["fedex.js"]
+    }
+  ],
+  "manifest_version": 3
+}
