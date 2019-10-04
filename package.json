@@ -8,8 +8,10 @@
     "webpack-cli": "^3.3.9"
   },
   "scripts": {
-    "build": "webpack --config webpack.config.js --mode=development && cp manifest.json dist",
-    "build:prod": "webpack --config webpack.config.js --mode=production && cp manifest.json dist",
+    "build": "webpack --config webpack.config.js && cp manifest.json dist",
     "clean": "rm -rf ./dist"
+  },
+  "dependencies": {
+    "sweetalert": "^2.1.2"
   }
 }
