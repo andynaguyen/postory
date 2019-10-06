@@ -5,19 +5,30 @@ export default class TrackingInfoStorage {
   }
 
   add(key, trackingInfo) {
-    this.storageArea.get([this.storeKey], (result) => {
-      console.log('old', result);
+    this.storageArea.get(this.storeKey, (result) => {
       const updated = { ...result[this.storeKey], ...{ [key]: trackingInfo } };
-      console.log('updated', updated);
       this.storageArea.set({ [this.storeKey]: updated });
     });
   }
 
-  get() {}
+  get(key, callback) {
+    this.storageArea.get(this.storeKey, (result) => callback(result[this.storeKey][key]));
+  }
 
-  list() {}
+  getAll(callback) {
+    this.storageArea.get(this.storeKey, (result) => {
+      const entries = Object.entries(result[this.storeKey]) || [];
+      callback(entries);
+    });
+  }
 
-  remove() {}
+  remove(key) {
+    this.storageArea.get(this.storeKey, (result) => {
+      const updated = { ...result[this.storeKey] };
+      delete updated[key];
+      this.storageArea.set({ [this.storeKey]: updated });
+    });
+  }
 
   update() {}
 }

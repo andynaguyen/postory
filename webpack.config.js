@@ -4,6 +4,7 @@ const webpack = require('webpack');
 module.exports = {
   entry: {
     fedex: './src/contentscripts/fedex.js',
+    popup: './src/popup/app.js',
   },
   devtool: 'inline-source-map',
   resolve: {

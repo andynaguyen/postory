@@ -9,5 +9,8 @@
       "js": ["fedex.js"]
     }
   ],
-  "manifest_version": 3
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "manifest_version": 2
 }
