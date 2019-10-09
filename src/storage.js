@@ -17,7 +17,7 @@ export default class TrackingInfoStorage {
 
   getAll(callback) {
     this.storageArea.get(this.storeKey, (result) => {
-      const entries = Object.entries(result[this.storeKey]) || [];
+      const entries = Object.entries(result[this.storeKey] || {});
       callback(entries);
     });
   }

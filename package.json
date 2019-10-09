@@ -8,10 +8,11 @@
     "webpack-cli": "^3.3.9"
   },
   "scripts": {
-    "build": "webpack --config webpack.config.js && cp manifest.json dist && cp popup.html dist",
+    "build": "webpack --config webpack.config.js && cp manifest.json dist && cp static/* dist",
     "clean": "rm -rf ./dist"
   },
   "dependencies": {
+    "luxon": "^1.19.3",
     "sweetalert": "^2.1.2"
   }
 }
