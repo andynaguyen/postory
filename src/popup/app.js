@@ -44,7 +44,7 @@ const TrackingInfoListItem = (id, trackingInfo, onDelete) => {
   return li;
 };
 
-const PopupApp = (trackingInfoIdPairs) => {
+const PopupApp = (trackingInfos) => {
   const onDelete = (id) => () => {
     const toDelete = document.getElementById(id);
     storage.remove(id);
@@ -55,7 +55,8 @@ const PopupApp = (trackingInfoIdPairs) => {
     const ul = document.createElement('ul');
     ul.style = 'list-style: none; padding-bottom: 3%;';
     ul.id = 'tracking-info-list';
-    trackingInfoIdPairs.forEach(([id, trackingInfo]) => {
+    trackingInfos.forEach((trackingInfo) => {
+      const id = `${trackingInfo.carrier}#${trackingInfo.tracking_number}`;
       const li = TrackingInfoListItem(id, trackingInfo, onDelete(id));
       ul.appendChild(li);
     });
@@ -65,7 +66,6 @@ const PopupApp = (trackingInfoIdPairs) => {
   return render();
 };
 
-storage.getAll((result) => {
-  console.log('result', result);
-  document.querySelector('div#app').appendChild(PopupApp(result));
+storage.getAll((trackingInfos) => {
+  document.querySelector('div#app').appendChild(PopupApp(trackingInfos));
 });

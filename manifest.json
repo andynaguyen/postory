@@ -3,6 +3,10 @@
   "version": "0.1",
   "description": "Postory extension - track packages",
   "permissions": ["storage"],
+  "background": {
+    "scripts": ["poll.js"],
+    "persistent": true
+  },
   "content_scripts": [
     {
       "matches": ["*://www.fedex.com/apps/fedextrack/*"],

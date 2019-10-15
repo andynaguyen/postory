@@ -5,6 +5,7 @@ module.exports = {
   entry: {
     fedex: './src/contentscripts/fedex.js',
     popup: './src/popup/app.js',
+    poll: './src/background/poll.js',
   },
   devtool: 'inline-source-map',
   resolve: {
