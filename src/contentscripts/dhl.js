@@ -5,11 +5,11 @@ import TrackingInfoStorage from '../storage';
 import createAlert from './alert';
 
 const params = new URLSearchParams(window.location.search);
-const trackingNumber = params.get('tracknumbers') || params.get('trknbr');
+const trackingNumber = params.get('AWB');
 
 if (trackingNumber) {
   createAlert(() => {
     const storage = new TrackingInfoStorage();
-    request('fedex', trackingNumber).then((trackingInfo) => storage.put(trackingInfo));
+    request('dhl_express', trackingNumber).then((trackingInfo) => storage.put(trackingInfo));
   });
 }

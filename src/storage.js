@@ -3,7 +3,7 @@ export default class {
     this.storageArea = sync ? chrome.storage.sync : chrome.storage.local;
   }
 
-  add(trackingInfo) {
+  put(trackingInfo) {
     const key = `${trackingInfo.carrier}#${trackingInfo.tracking_number}`;
     this.storageArea.set({ [key]: trackingInfo });
   }

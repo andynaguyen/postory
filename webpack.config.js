@@ -4,6 +4,9 @@ const webpack = require('webpack');
 module.exports = {
   entry: {
     fedex: './src/contentscripts/fedex.js',
+    ups: './src/contentscripts/ups.js',
+    usps: './src/contentscripts/usps.js',
+    dhl: './src/contentscripts/dhl.js',
     popup: './src/popup/app.js',
     poll: './src/background/poll.js',
   },

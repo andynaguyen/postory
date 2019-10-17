@@ -9,7 +9,7 @@ setInterval(() => {
       console.log('polling for updates', { trackingInfo });
       request(trackingInfo.carrier, trackingInfo.tracking_number).then((response) => {
         console.log('got response from server', { response });
-        storage.add(response);
+        storage.put(response);
       });
     });
   });

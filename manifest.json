@@ -9,8 +9,20 @@
   },
   "content_scripts": [
     {
-      "matches": ["*://www.fedex.com/apps/fedextrack/*"],
+      "matches": ["*://www.fedex.com/apps/fedextrack/?*"],
       "js": ["fedex.js"]
+    },
+    {
+      "matches": ["*://www.ups.com/track?*"],
+      "js": ["ups.js"]
+    },
+    {
+      "matches": ["*://tools.usps.com/go/TrackConfirmAction?*"],
+      "js": ["usps.js"]
+    },
+    {
+      "matches": ["*://www.dhl.com/*/express/tracking.html?*"],
+      "js": ["dhl.js"]
     }
   ],
   "browser_action": {
