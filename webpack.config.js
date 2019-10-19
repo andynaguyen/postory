@@ -7,7 +7,7 @@ module.exports = {
     ups: './src/contentscripts/ups.js',
     usps: './src/contentscripts/usps.js',
     dhl: './src/contentscripts/dhl.js',
-    popup: './src/popup/app.js',
+    popup: './src/popup/index.js',
     poll: './src/background/poll.js',
   },
   devtool: 'inline-source-map',

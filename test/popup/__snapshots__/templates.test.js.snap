@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TrackingInfoList should generate empty ul given empty list 1`] = `
+"
+    <ul id=\\"tracking-info-list\\">
+      
+    </ul>
+  "
+`;
+
+exports[`TrackingInfoList should generate li's given tracking info list 1`] = `
+"
+    <ul id=\\"tracking-info-list\\">
+      
+    <li id=\\"fedex#12345\\" class=\\"container tracking-info\\" >
+      <div class=\\"card\\">
+        <div class=\\"card-header\\">
+          <p class=\\"card-header-title\\">12345</p>
+          <div class=\\"card-header-icon\\" aria-label=\\"delete\\">
+            <button class=\\"delete\\"/>
+          </div>
+        </div>
+        <div class=\\"card-content\\">
+          <div class=\\"media\\">
+            <div class=\\"media-left\\">
+              <figure class=\\"image is-48x48\\">
+                <img src=\\"images/fedex.webp\\" alt=\\"fedex\\"/>
+              </figure>
+            </div>
+            <div class=\\"media-content tracking-info-media-content\\" >
+              <p>ETA: Oct 18, 2019, 7:09 PM</p>
+              <p>STATUS: DELIVERED</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  
+    <li id=\\"ups#ABCDEF\\" class=\\"container tracking-info\\" >
+      <div class=\\"card\\">
+        <div class=\\"card-header\\">
+          <p class=\\"card-header-title\\">ABCDEF</p>
+          <div class=\\"card-header-icon\\" aria-label=\\"delete\\">
+            <button class=\\"delete\\"/>
+          </div>
+        </div>
+        <div class=\\"card-content\\">
+          <div class=\\"media\\">
+            <div class=\\"media-left\\">
+              <figure class=\\"image is-48x48\\">
+                <img src=\\"images/ups.webp\\" alt=\\"ups\\"/>
+              </figure>
+            </div>
+            <div class=\\"media-content tracking-info-media-content\\" >
+              <p>ETA: Oct 15, 2019, 10:00 AM</p>
+              <p>STATUS: TRANSIT</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  
+    </ul>
+  "
+`;

@@ -12,7 +12,7 @@ export default class {
     this.storageArea.get(key, (result) => callback(result));
   }
 
-  getAll(callback) {
+  list(callback) {
     this.storageArea.get(null, (result) => {
       const entries = Object.values(result || {});
       callback(entries);
@@ -22,6 +22,4 @@ export default class {
   remove(key) {
     this.storageArea.remove(key);
   }
-
-  update() {}
 }

@@ -8,7 +8,7 @@ const onDeleteTrackingInfo = (li) => {
   document.querySelector('ul#tracking-info-list').removeChild(li);
 };
 
-storage.getAll((trackingInfos) => {
+storage.list((trackingInfos) => {
   document.querySelector('div#app').innerHTML = TrackingInfoList(trackingInfos);
   document
     .querySelectorAll('li.tracking-info')
