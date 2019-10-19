@@ -13,6 +13,10 @@
   padding-bottom: 3%;
 }
 
+.no-cursor {
+  cursor: default;
+}
+
 #app {
   height: 350px;
   width: 325px;

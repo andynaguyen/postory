@@ -13,8 +13,8 @@ const TrackingInfoListItem = (trackingInfo) =>
       <div class="card">
         <div class="card-header">
           <p class="card-header-title">${trackingInfo.tracking_number}</p>
-          <div class="card-header-icon" aria-label="delete">
-            <button class="delete"/>
+          <div class="card-header-icon no-cursor">
+            <button class="card-header-icon delete aria-label="delete""/>
           </div>
         </div>
         <div class="card-content">
