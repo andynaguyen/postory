@@ -1,5 +1,5 @@
-import TrackingInfoStorage from '../storage';
-import { TrackingInfoList } from './templates';
+import TrackingInfoStorage from 'src/storage';
+import { TrackingInfoList } from 'src/templates';
 
 const storage = new TrackingInfoStorage();
 

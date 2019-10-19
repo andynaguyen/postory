@@ -1,4 +1,4 @@
-import { TrackingInfoList } from '../../src/popup/templates';
+import { TrackingInfoList } from 'src/templates';
 
 describe('TrackingInfoList', () => {
   it('should generate empty ul given empty list', () => {

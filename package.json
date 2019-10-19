@@ -18,5 +18,10 @@
   "dependencies": {
     "luxon": "^1.19.3",
     "sweetalert": "^2.1.2"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^src(.*)$": "<rootDir>/src$1"
+    }
   }
 }

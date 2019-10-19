@@ -12,6 +12,9 @@ module.exports = {
   },
   devtool: 'inline-source-map',
   resolve: {
+    alias: {
+      src: path.resolve('src'),
+    },
     extensions: ['.js'],
   },
   output: {

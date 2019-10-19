@@ -1,8 +1,8 @@
 'use strict';
 
-import { request } from '../client';
-import TrackingInfoStorage from '../storage';
-import createAlert from './alert';
+import { request } from 'src/client';
+import TrackingInfoStorage from 'src/storage';
+import createAlert from 'src/contentscripts/alert';
 
 const params = new URLSearchParams(window.location.search);
 const trackingNumber = params.get('tracknumbers') || params.get('trknbr');

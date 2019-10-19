@@ -14,12 +14,12 @@ exports[`TrackingInfoList should generate li's given tracking info list 1`] = `
       
     <li id=\\"fedex#12345\\" class=\\"container tracking-info\\" >
       <div class=\\"card\\">
-        <div class=\\"card-header\\">
+        <header class=\\"card-header\\">
           <p class=\\"card-header-title\\">12345</p>
-          <div class=\\"card-header-icon\\" aria-label=\\"delete\\">
-            <button class=\\"delete\\"/>
+          <div class=\\"card-header-icon no-cursor\\">
+            <button class=\\"card-header-icon delete aria-label=\\"delete\\"\\"/>
           </div>
-        </div>
+        </header>
         <div class=\\"card-content\\">
           <div class=\\"media\\">
             <div class=\\"media-left\\">
@@ -38,12 +38,12 @@ exports[`TrackingInfoList should generate li's given tracking info list 1`] = `
   
     <li id=\\"ups#ABCDEF\\" class=\\"container tracking-info\\" >
       <div class=\\"card\\">
-        <div class=\\"card-header\\">
+        <header class=\\"card-header\\">
           <p class=\\"card-header-title\\">ABCDEF</p>
-          <div class=\\"card-header-icon\\" aria-label=\\"delete\\">
-            <button class=\\"delete\\"/>
+          <div class=\\"card-header-icon no-cursor\\">
+            <button class=\\"card-header-icon delete aria-label=\\"delete\\"\\"/>
           </div>
-        </div>
+        </header>
         <div class=\\"card-content\\">
           <div class=\\"media\\">
             <div class=\\"media-left\\">

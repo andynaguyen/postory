@@ -11,12 +11,12 @@ const TrackingInfoListItem = (trackingInfo) =>
   `
     <li id="${`${trackingInfo.carrier}#${trackingInfo.tracking_number}`}" class="container tracking-info" >
       <div class="card">
-        <div class="card-header">
+        <header class="card-header">
           <p class="card-header-title">${trackingInfo.tracking_number}</p>
           <div class="card-header-icon no-cursor">
             <button class="card-header-icon delete aria-label="delete""/>
           </div>
-        </div>
+        </header>
         <div class="card-content">
           <div class="media">
             <div class="media-left">
@@ -39,4 +39,18 @@ export const TrackingInfoList = (trackingInfos) =>
     <ul id="tracking-info-list">
       ${trackingInfos.map((trackingInfo) => TrackingInfoListItem(trackingInfo)).join('')}
     </ul>
+  `;
+
+const Notification = () =>
+  `
+    <div class="card">
+      <header class="card-header">
+        Add to Postory?
+      </header>
+      <div class="card-content">
+      </div>
+      <footer class="card-footer">
+        <a href="#" class="card-footer-item">Save</a>
+      </footer>
+    </div>
   `;

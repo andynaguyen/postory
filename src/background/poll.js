@@ -1,5 +1,5 @@
-import TrackingInfoStorage from '../storage';
-import { request } from '../client';
+import TrackingInfoStorage from 'src/storage';
+import { request } from 'src/client';
 
 const storage = new TrackingInfoStorage();
 const interval = 1000 * 60 * 60 * 2; // 2 hours
