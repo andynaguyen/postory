@@ -1,6 +1,6 @@
 'use strict';
 
-import { request } from 'src/client';
+import client from 'src/client';
 import TrackingInfoStorage from 'src/storage';
 import createAlert from 'src/contentscripts/alert';
 
@@ -10,6 +10,6 @@ const trackingNumber = params.get('AWB');
 if (trackingNumber) {
   createAlert(() => {
     const storage = new TrackingInfoStorage();
-    request('dhl_express', trackingNumber).then((trackingInfo) => storage.put(trackingInfo));
+    client.request('dhl_express', trackingNumber).then((trackingInfo) => storage.put(trackingInfo));
   });
 }

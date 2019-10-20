@@ -2,7 +2,7 @@
   "name": "Postory",
   "version": "0.1",
   "description": "Postory extension - track packages",
-  "permissions": ["storage"],
+  "permissions": ["storage", "notifications"],
   "background": {
     "scripts": ["poll.js"],
     "persistent": true

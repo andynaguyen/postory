@@ -8,7 +8,7 @@ module.exports = {
     usps: './src/contentscripts/usps.js',
     dhl: './src/contentscripts/dhl.js',
     popup: './src/popup/index.js',
-    poll: './src/background/poll.js',
+    poll: './src/background/index.js',
   },
   devtool: 'inline-source-map',
   resolve: {
