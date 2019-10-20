@@ -1,5 +1,6 @@
 import { DateTime } from 'luxon';
 import { ImgFileByCarrier } from 'src/constants';
+import util from 'src/util';
 
 const TrackingInfoListItem = (trackingInfo) =>
   `
@@ -19,7 +20,7 @@ const TrackingInfoListItem = (trackingInfo) =>
               </figure>
             </div>
             <div class="media-content tracking-info-media-content" >
-              <p>ETA: ${DateTime.fromISO(trackingInfo.eta).toLocaleString(DateTime.DATETIME_MED)}</p>
+              <p>ETA: ${util.formatDateTime(DateTime.fromISO(trackingInfo.eta))}</p>
               <p>STATUS: ${trackingInfo.tracking_status.status}</p>
             </div>
           </div>

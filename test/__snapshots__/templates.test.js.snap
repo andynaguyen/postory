@@ -28,7 +28,7 @@ exports[`TrackingInfoList should generate li's given tracking info list 1`] = `
               </figure>
             </div>
             <div class=\\"media-content tracking-info-media-content\\" >
-              <p>ETA: Oct 18, 2019, 7:09 PM</p>
+              <p>ETA: Oct 18, 2019, 12:09 PM</p>
               <p>STATUS: DELIVERED</p>
             </div>
           </div>
@@ -52,7 +52,7 @@ exports[`TrackingInfoList should generate li's given tracking info list 1`] = `
               </figure>
             </div>
             <div class=\\"media-content tracking-info-media-content\\" >
-              <p>ETA: Oct 15, 2019, 10:00 AM</p>
+              <p>ETA: Oct 15, 2019, 3:00 AM</p>
               <p>STATUS: TRANSIT</p>
             </div>
           </div>

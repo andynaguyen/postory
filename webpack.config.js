@@ -23,7 +23,7 @@ module.exports = {
   },
   plugins: [
     new webpack.EnvironmentPlugin({
-      ENDPOINT: '',
+      ENDPOINT: process.env.ENDPOINT,
     }),
   ],
 };
