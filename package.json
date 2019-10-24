@@ -16,6 +16,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "lit-html": "^1.1.2",
     "luxon": "^1.19.3",
     "sweetalert": "^2.1.2"
   },
