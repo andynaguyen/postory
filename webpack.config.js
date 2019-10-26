@@ -3,10 +3,7 @@ const webpack = require('webpack');
 
 module.exports = {
   entry: {
-    fedex: './src/contentscripts/fedex.js',
-    ups: './src/contentscripts/ups.js',
-    usps: './src/contentscripts/usps.js',
-    dhl: './src/contentscripts/dhl.js',
+    search: './src/contentscripts/search/index.js',
     popup: './src/popup/index.js',
     poll: './src/background/index.js',
   },
