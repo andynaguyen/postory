@@ -12,3 +12,11 @@ const onDeleteTrackingInfo = (id) => {
 storage.list((trackingInfos) => {
   render(trackingInfoList(trackingInfos, onDeleteTrackingInfo), document.querySelector('div#app'));
 });
+
+chrome.runtime.onMessage.addListener((request) => {
+  if (request.isStorageStale) {
+    storage.list((trackingInfos) => {
+      render(trackingInfoList(trackingInfos, onDeleteTrackingInfo), document.querySelector('div#app'));
+    });
+  }
+});

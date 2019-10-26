@@ -5,7 +5,7 @@ export default class {
 
   put(trackingInfo) {
     const key = `${trackingInfo.carrier}#${trackingInfo.tracking_number}`;
-    this.storageArea.set({ [key]: trackingInfo });
+    this.storageArea.set({ [key]: trackingInfo }, this.dispatchMessage);
   }
 
   get(key, callback) {
@@ -21,5 +21,11 @@ export default class {
 
   remove(key) {
     this.storageArea.remove(key);
+  }
+
+  dispatchMessage() {
+    chrome.runtime.sendMessage({
+      isStorageStale: true,
+    });
   }
 }

@@ -28,7 +28,7 @@ describe('TrackingInfoStorage', () => {
     const storage = new TrackingInfoStorage();
 
     storage.put(trackingInfo);
-    expect(mockSet).toBeCalledWith({ 'carrier#tracking_number': trackingInfo });
+    expect(mockSet).toBeCalledWith({ 'carrier#tracking_number': trackingInfo }, storage.dispatchMessage);
   });
 
   it('should use key passed in for get', () => {
@@ -47,5 +47,17 @@ describe('TrackingInfoStorage', () => {
     const storage = new TrackingInfoStorage();
     storage.remove('key');
     expect(mockRemove).toBeCalledWith('key');
+  });
+
+  it('should send message via chrome runtime', () => {
+    const storage = new TrackingInfoStorage();
+    const mockSendMessage = jest.fn();
+    global.chrome = {
+      runtime: {
+        sendMessage: mockSendMessage,
+      },
+    };
+    storage.dispatchMessage();
+    expect(mockSendMessage).toBeCalledWith({ isStorageStale: true });
   });
 });
