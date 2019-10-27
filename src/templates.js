@@ -70,5 +70,4 @@ export const trackingAlert = ({ trackingNumber, carrierImgSrc, carrierImgAlt, on
       </footer>
     </div>
     <div id="postory-progress-bar"></div>
-    >
   `;
