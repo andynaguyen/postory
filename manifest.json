@@ -3,6 +3,10 @@
   "version": "0.1",
   "description": "Postory extension - track packages",
   "permissions": ["storage", "notifications"],
+  "icons": {
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
   "background": {
     "scripts": ["poll.js"],
     "persistent": true
@@ -15,11 +19,13 @@
         "*://tools.usps.com/go/TrackConfirmAction?*",
         "*://www.dhl.com/*/express/tracking.html?*"
       ],
+      "css": ["bulma.min.css", "contentscript.css"],
       "js": ["search.js"]
     }
   ],
   "browser_action": {
     "default_popup": "popup.html"
   },
-  "manifest_version": 2
+  "manifest_version": 2,
+  "web_accessible_resources": ["images/*"]
 }

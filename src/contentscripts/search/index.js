@@ -5,12 +5,11 @@ import TrackingInfoStorage from 'src/storage';
 import createAlert from 'src/contentscripts/alert';
 import { getCarrier, getTrackingNumber } from 'src/contentscripts/search/helper';
 
+const carrier = getCarrier(window.location.hostname);
 const trackingNumber = getTrackingNumber(window.location);
 if (trackingNumber) {
-  createAlert(() => {
+  createAlert(carrier, trackingNumber, () => {
     const storage = new TrackingInfoStorage();
-    client
-      .request(getCarrier(window.location.hostname), trackingNumber)
-      .then((trackingInfo) => storage.put(trackingInfo));
+    return client.request(carrier, trackingNumber).then((trackingInfo) => storage.put(trackingInfo));
   });
 }
