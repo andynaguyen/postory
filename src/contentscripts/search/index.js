@@ -8,8 +8,12 @@ import { getCarrier, getTrackingNumber } from 'src/contentscripts/search/helper'
 const carrier = getCarrier(window.location.hostname);
 const trackingNumber = getTrackingNumber(window.location);
 if (trackingNumber) {
-  createAlert(carrier, trackingNumber, () => {
-    const storage = new TrackingInfoStorage();
-    return client.request(carrier, trackingNumber).then((trackingInfo) => storage.put(trackingInfo));
+  const storage = new TrackingInfoStorage();
+  storage.get(`${carrier}#${trackingNumber}`, (res) => {
+    if (Object.keys(res).length === 0) {
+      createAlert(carrier, trackingNumber, () => {
+        return client.request(carrier, trackingNumber).then((trackingInfo) => storage.put(trackingInfo));
+      });
+    }
   });
 }
