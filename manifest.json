@@ -19,7 +19,7 @@
         "*://tools.usps.com/go/TrackConfirmAction?*",
         "*://www.dhl.com/*/express/tracking.html?*"
       ],
-      "css": ["bulma.min.css", "contentscript.css"],
+      "css": ["bulma.min.css", "contentscript.css", "animate.css"],
       "js": ["search.js"]
     }
   ],

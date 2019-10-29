@@ -6,7 +6,9 @@ const storage = new TrackingInfoStorage();
 
 const onDeleteTrackingInfo = (id) => {
   storage.remove(id);
-  document.getElementById(`${id}`).remove();
+  const el = document.getElementById(`${id}`);
+  el.classList.add('animated', 'fadeOutRight');
+  el.addEventListener('animationend', el.remove);
 };
 
 storage.list((trackingInfos) => {

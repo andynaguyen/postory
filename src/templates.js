@@ -49,7 +49,7 @@ export const trackingAlert = ({ trackingNumber, carrierImgSrc, carrierImgAlt, on
     <div class="card">
       <header class="card-header">
         <p class="card-header-title">
-          Track package using Postory?
+          Track shipment using Postory?
         </p>
       </header>
       <div class="card-content">
