@@ -2917,10 +2917,9 @@ levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
-lit-html@^1.1.2:
+"lit-html@https://github.com/andynaguyen/lit-html#ec237e131bd92620320a3228c8bd4872edeed217":
   version "1.1.2"
-  resolved "https://registry.yarnpkg.com/lit-html/-/lit-html-1.1.2.tgz#2e3560a7075210243649c888ad738eaf0daa8374"
-  integrity sha512-FFlUMKHKi+qG1x1iHNZ1hrtc/zHmfYTyrSvs3/wBTvaNtpZjOZGWzU7efGYVpgp6KvWeKF6ql9/KsCq6Z/mEDA==
+  resolved "https://github.com/andynaguyen/lit-html#ec237e131bd92620320a3228c8bd4872edeed217"
 
 load-json-file@^4.0.0:
   version "4.0.0"

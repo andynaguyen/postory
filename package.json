@@ -16,7 +16,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "lit-html": "^1.1.2",
+    "lit-html": "https://github.com/andynaguyen/lit-html#ec237e131bd92620320a3228c8bd4872edeed217",
     "luxon": "^1.19.3"
   },
   "jest": {
