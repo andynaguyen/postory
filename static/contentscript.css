@@ -1,7 +1,119 @@
-#postory-tracking-alert {
-  width: 350px;
+#postory-tracking-alert-container {
+  width: 360px;
+  height: 193px;
   position: fixed;
   top: 10px;
+  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
   right: 10px;
   z-index: 1000000;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+#postory-tracking-alert-iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.postory-progress {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  border-radius: 290486px;
+  display: block;
+  height: 1rem;
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
+}
+
+.postory-progress::-webkit-progress-bar {
+  background-color: #ededed;
+}
+
+.postory-progress::-webkit-progress-value {
+  background-color: #4a4a4a;
+}
+
+.postory-progress::-moz-progress-bar {
+  background-color: #4a4a4a;
+}
+
+.postory-progress::-ms-fill {
+  background-color: #4a4a4a;
+  border: none;
+}
+
+.postory-progress.is-primary::-webkit-progress-value {
+  background-color: #00d1b2;
+}
+
+.postory-progress.is-primary::-moz-progress-bar {
+  background-color: #00d1b2;
+}
+
+.postory-progress.is-primary::-ms-fill {
+  background-color: #00d1b2;
+}
+
+.postory-progress.is-primary:indeterminate {
+  background-image: linear-gradient(to right, #00d1b2 30%, #ededed 30%);
+}
+
+.postory-progress:indeterminate {
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: moveIndeterminate;
+  animation-name: moveIndeterminate;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  background-color: #ededed;
+  background-image: linear-gradient(to right, #4a4a4a 30%, #ededed 30%);
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: 150% 150%;
+}
+
+.postory-progress:indeterminate::-webkit-progress-bar {
+  background-color: transparent;
+}
+
+.postory-progress:indeterminate::-moz-progress-bar {
+  background-color: transparent;
+}
+
+.postory-progress.is-small {
+  height: 0.75rem;
+}
+
+.postory-progress.is-medium {
+  height: 1.25rem;
+}
+
+.postory-progress.is-large {
+  height: 1.5rem;
+}
+
+@-webkit-keyframes moveIndeterminate {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes moveIndeterminate {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
 }

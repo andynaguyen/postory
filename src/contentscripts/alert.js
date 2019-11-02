@@ -1,9 +1,8 @@
 import { render } from 'lit-html';
-import { trackingAlert, progressBar } from 'src/templates';
-import { ImgFileByCarrier } from 'src/constants';
+import { progressBar, trackingAlertContainer } from 'src/templates';
 
 const onDismiss = () => {
-  const el = document.getElementById('postory-tracking-alert');
+  const el = document.getElementById('postory-tracking-alert-container');
   el.classList.add('slideOutRight');
   el.addEventListener('animationend', el.remove);
 };
@@ -14,16 +13,24 @@ export default (carrier, trackingNumber, callback) => {
     callback().then(onDismiss);
   };
 
-  setTimeout(() => {
-    const carrierImgSrc = chrome.runtime.getURL(ImgFileByCarrier[carrier]);
-    const trackingAlertDiv = document.createElement('div');
-    trackingAlertDiv.id = 'postory-tracking-alert';
-    trackingAlertDiv.classList.add('animated', 'slideInRight');
-    document.body.appendChild(trackingAlertDiv);
+  window.onmessage = (request) => {
+    if (request.data.trackingAlert) {
+      switch (request.data.trackingAlert.action) {
+        case 'dismiss':
+          onDismiss();
+          break;
+        case 'confirm':
+          onConfirm();
+          break;
+      }
+    }
+  };
 
-    render(
-      trackingAlert({ carrierImgSrc, carrierImgAlt: carrier, trackingNumber, onDismiss, onConfirm }),
-      trackingAlertDiv,
-    );
+  setTimeout(() => {
+    const iframe = document.createElement('div');
+    iframe.id = 'postory-tracking-alert-container';
+    iframe.classList.add('animated', 'slideInRight');
+    document.body.appendChild(iframe);
+    render(trackingAlertContainer({ carrier, trackingNumber }), iframe);
   }, 2500);
 };

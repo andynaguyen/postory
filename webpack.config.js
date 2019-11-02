@@ -4,6 +4,7 @@ const webpack = require('webpack');
 module.exports = {
   entry: {
     search: './src/contentscripts/search/index.js',
+    iframe: './src/contentscripts/iframe.js',
     popup: './src/popup/index.js',
     poll: './src/background/index.js',
   },

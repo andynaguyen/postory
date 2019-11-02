@@ -41,12 +41,21 @@ export const trackingInfoList = (trackingInfos, onDeleteTrackingInfo) =>
 
 export const progressBar = () =>
   html`
-    <progress class="progress is-small is-primary" max="100">15%</progress>
+    <progress class="postory-progress is-small is-primary" max="100">15%</progress>
+  `;
+
+export const trackingAlertContainer = ({ carrier, trackingNumber }) =>
+  html`
+    <iframe
+      src="${chrome.runtime.getURL('iframe.html')}?carrier=${carrier}&trackingNumber=${trackingNumber}"
+      id="postory-tracking-alert-iframe"
+    ></iframe>
+    <div id="postory-progress-bar"></div>
   `;
 
 export const trackingAlert = ({ trackingNumber, carrierImgSrc, carrierImgAlt, onDismiss, onConfirm }) =>
   html`
-    <div class="card">
+    <div class="card animated fadeIn">
       <header class="card-header">
         <p class="card-header-title">
           Track shipment using Postory?
@@ -60,14 +69,13 @@ export const trackingAlert = ({ trackingNumber, carrierImgSrc, carrierImgAlt, on
             </figure>
           </div>
           <div class="media-content">
-            <p class="level">${trackingNumber}</p>
+            <p>${trackingNumber}</p>
           </div>
         </div>
       </div>
       <footer class="card-footer">
-        <a href="javascript:void(0);" class="card-footer-item" @click=${onDismiss}>Not Now</a>
-        <a href="javascript:void(0);" class="card-footer-item" @click=${onConfirm}>OK</a>
+        <a href="#" class="card-footer-item" @click=${onDismiss}>Not Now</a>
+        <a href="#" class="card-footer-item" @click=${onConfirm}>OK</a>
       </footer>
     </div>
-    <div id="postory-progress-bar"></div>
   `;
