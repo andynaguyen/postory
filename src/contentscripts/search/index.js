@@ -9,11 +9,14 @@ const carrier = getCarrier(window.location.hostname);
 const trackingNumber = getTrackingNumber(window.location);
 if (trackingNumber) {
   const storage = new TrackingInfoStorage();
+  const onConfirm = (displayName) => {
+    return client
+      .request(carrier, trackingNumber)
+      .then((trackingInfo) => storage.put({ ...trackingInfo, ...{ displayName } }));
+  };
   storage.get(`${carrier}#${trackingNumber}`, (res) => {
     if (Object.keys(res).length === 0) {
-      createAlert(carrier, trackingNumber, () => {
-        return client.request(carrier, trackingNumber).then((trackingInfo) => storage.put(trackingInfo));
-      });
+      createAlert(carrier, trackingNumber, onConfirm);
     }
   });
 }

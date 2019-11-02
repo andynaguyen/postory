@@ -8,9 +8,9 @@ const onDismiss = () => {
 };
 
 export default (carrier, trackingNumber, callback) => {
-  const onConfirm = () => {
+  const onConfirm = (displayName) => {
     render(progressBar(), document.getElementById('postory-progress-bar'));
-    callback().then(onDismiss);
+    callback(displayName).then(onDismiss);
   };
 
   window.onmessage = (request) => {
@@ -20,7 +20,7 @@ export default (carrier, trackingNumber, callback) => {
           onDismiss();
           break;
         case 'confirm':
-          onConfirm();
+          onConfirm(request.data.trackingAlert.displayName);
           break;
       }
     }

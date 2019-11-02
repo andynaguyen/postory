@@ -9,7 +9,7 @@ const trackingInfoListItem = (trackingInfo, onDeleteTrackingInfo) => {
     <li id="${id}" class="container tracking-info">
       <div class="card">
         <header class="card-header">
-          <p class="card-header-title">${trackingInfo.tracking_number}</p>
+          <p class="card-header-title">${trackingInfo.displayName || trackingInfo.tracking_number}</p>
           <div class="card-header-icon no-cursor">
             <button class="card-header-icon delete" aria-label="delete" @click=${() => onDeleteTrackingInfo(id)} />
           </div>
@@ -69,7 +69,7 @@ export const trackingAlert = ({ trackingNumber, carrierImgSrc, carrierImgAlt, on
             </figure>
           </div>
           <div class="media-content">
-            <p>${trackingNumber}</p>
+            <input id="display-name-input" class="input" type="text" placeholder="Display name (optional)" />
           </div>
         </div>
       </div>

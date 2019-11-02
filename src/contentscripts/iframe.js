@@ -22,6 +22,7 @@ const onConfirm = () => {
     {
       trackingAlert: {
         action: 'confirm',
+        displayName: document.getElementById('display-name-input').value,
       },
     },
     '*',
