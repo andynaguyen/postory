@@ -1,5 +1,5 @@
 import { render } from 'lit-html';
-import { progressBar, trackingAlertContainer } from 'src/templates';
+import { progressBar, trackingAlertContainer } from 'src/contentscripts/templates';
 
 const onDismiss = () => {
   const el = document.getElementById('postory-tracking-alert-container');

@@ -1,6 +1,6 @@
 import { render } from 'lit-html';
 import TrackingInfoStorage from 'src/storage';
-import { trackingInfoList } from 'src/templates';
+import { trackingInfoList } from 'src/popup/templates';
 
 const storage = new TrackingInfoStorage();
 

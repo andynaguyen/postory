@@ -4,8 +4,18 @@
   padding-left: 3%;
 }
 
+.tracking-info-card {
+  height: 152px;
+  width: 305.5px;
+}
+
 .tracking-info-media-content {
   font-size: 14px;
+  overflow-y: hidden;
+}
+
+.tracking-info-media-content > .tags:not(:last-child) {
+  margin-bottom: 0;
 }
 
 #tracking-info-list {

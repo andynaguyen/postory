@@ -1,5 +1,5 @@
 import { render } from 'lit-html';
-import { trackingAlert } from 'src/templates';
+import { trackingAlert } from 'src/contentscripts/templates';
 import { ImgFileByCarrier } from 'src/constants';
 
 const params = new URLSearchParams(window.location.search);
