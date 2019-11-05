@@ -17,7 +17,8 @@
         "*://www.fedex.com/apps/fedextrack/?*",
         "*://www.ups.com/track?*",
         "*://tools.usps.com/go/TrackConfirmAction?*",
-        "*://www.dhl.com/*/express/tracking.html?*"
+        "*://www.dhl.com/*/express/tracking.html?*",
+        "*://www.canadapost.ca/trackweb/*"
       ],
       "css": ["contentscript.css", "animate.min.css"],
       "js": ["search.js"]

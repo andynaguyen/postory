@@ -15,11 +15,18 @@ const infoByHostname = {
     carrier: 'dhl_express',
     paramNames: ['AWB'],
   },
+  'www.canadapost.ca': {
+    getSearchParams: (windowLocation) =>
+      new URLSearchParams(windowLocation.hash.substr(windowLocation.hash.indexOf('?'))),
+    carrier: 'canada_post',
+    paramNames: ['searchFor'],
+  },
 };
 
-export const getTrackingNumber = ({ search, hostname }) => {
-  const params = new URLSearchParams(search);
+export const getTrackingNumber = (windowLocation) => {
+  const { search, hostname } = windowLocation;
   const info = infoByHostname[hostname];
+  const params = info.getSearchParams ? info.getSearchParams(windowLocation) : new URLSearchParams(search);
   return info.paramNames.map((paramName) => params.get(paramName)).filter((paramVal) => paramVal)[0];
 };
 

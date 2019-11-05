@@ -8,7 +8,7 @@ module.exports = {
     popup: './src/popup/index.js',
     poll: './src/background/index.js',
   },
-  devtool: 'inline-source-map',
+  // devtool: 'inline-source-map',
   resolve: {
     alias: {
       src: path.resolve('src'),
