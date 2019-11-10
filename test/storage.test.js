@@ -1,4 +1,4 @@
-import TrackingInfoStorage from '../src/storage';
+import TrackingInfoStorage from 'src/storage';
 
 describe('TrackingInfoStorage', () => {
   let mockSet;

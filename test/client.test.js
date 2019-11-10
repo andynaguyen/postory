@@ -1,4 +1,4 @@
-import client from '../src/client';
+import client from 'src/client';
 
 describe('client', () => {
   it('should construct correct endpoint to fetch from', () => {

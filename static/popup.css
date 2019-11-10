@@ -23,8 +23,12 @@
   padding-bottom: 3%;
 }
 
-.no-cursor {
+.no-pointer {
   cursor: default;
+}
+
+.with-pointer {
+  cursor: pointer;
 }
 
 #app {

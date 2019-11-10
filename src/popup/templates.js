@@ -1,6 +1,7 @@
 import { DateTime } from 'luxon';
 import { html } from 'lit-html';
 import { ImgFileByCarrier } from 'src/constants';
+import { openCarrierTab } from 'src/tab';
 import util from 'src/util';
 
 const BadgeInfoByTrackingStatus = {
@@ -31,7 +32,7 @@ const BadgeInfoByTrackingStatus = {
 };
 
 const trackingInfoStatusBadge = (trackingInfoStatus) => {
-  const { text, className } = BadgeInfoByTrackingStatus[trackingInfoStatus];
+  const { text, className } = BadgeInfoByTrackingStatus[trackingInfoStatus] || BadgeInfoByTrackingStatus.UNKNOWN;
   return html`
     <div class="tags has-addons">
       <span class="tag">Status</span>
@@ -66,8 +67,10 @@ const trackingInfoListItem = (trackingInfo, onDeleteTrackingInfo) => {
     <li id="${id}" class="container tracking-info">
       <div class="card tracking-info-card">
         <header class="card-header">
-          <p class="card-header-title">${trackingInfo.displayName || trackingInfo.tracking_number}</p>
-          <div class="card-header-icon no-cursor">
+          <p class="card-header-title with-pointer" @click=${() => openCarrierTab(trackingInfo)}>
+            ${trackingInfo.displayName || trackingInfo.tracking_number}
+          </p>
+          <div class="card-header-icon no-pointer">
             <button class="card-header-icon delete" aria-label="delete" @click=${() => onDeleteTrackingInfo(id)} />
           </div>
         </header>
