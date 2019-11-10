@@ -9,18 +9,25 @@ const onDismiss = () => {
 
 export default (carrier, trackingNumber, callback) => {
   const onConfirm = (displayName) => {
-    render(progressBar(), document.getElementById('postory-progress-bar'));
-    callback(displayName).then(onDismiss);
+    render(progressBar('primary'), document.getElementById('postory-progress-bar'));
+    callback(displayName)
+      .then(onDismiss)
+      .catch((err) => {
+        console.error('failed to add tracking info: ', err);
+        render(progressBar('danger'), document.getElementById('postory-progress-bar'));
+        setTimeout(onDismiss, 2500);
+      });
   };
 
   window.onmessage = (request) => {
     if (request.data.trackingAlert) {
-      switch (request.data.trackingAlert.action) {
+      const { action, displayName } = request.data.trackingAlert;
+      switch (action) {
         case 'dismiss':
           onDismiss();
           break;
         case 'confirm':
-          onConfirm(request.data.trackingAlert.displayName);
+          onConfirm(displayName);
           break;
       }
     }

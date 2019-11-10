@@ -1,7 +1,7 @@
 const infoByHostname = {
   'www.fedex.com': {
     carrier: 'fedex',
-    paramNames: ['tracknumbers', 'trknbr'],
+    paramNames: ['tracknumbers', 'trknbr', 'trackingnumber'],
   },
   'www.ups.com': {
     carrier: 'ups',

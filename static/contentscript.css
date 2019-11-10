@@ -64,6 +64,22 @@
   background-image: linear-gradient(to right, #00d1b2 30%, #ededed 30%);
 }
 
+.postory-progress.is-danger::-webkit-progress-value {
+  background-color: #f14668;
+}
+
+.postory-progress.is-danger::-moz-progress-bar {
+  background-color: #f14668;
+}
+
+.postory-progress.is-danger::-ms-fill {
+  background-color: #f14668;
+}
+
+.postory-progress.is-danger:indeterminate {
+  background-image: linear-gradient(to right, #f14668 30%, #ededed 30%);
+}
+
 .postory-progress:indeterminate {
   -webkit-animation-duration: 1.5s;
   animation-duration: 1.5s;

@@ -1,9 +1,14 @@
 import { html } from 'lit-html';
 
-export const progressBar = () =>
-  html`
-    <progress class="postory-progress is-small is-primary" max="100">15%</progress>
+export const progressBar = (type) => {
+  const classNameByType = {
+    primary: 'is-primary',
+    danger: 'is-danger',
+  };
+  return html`
+    <progress class="postory-progress is-small ${classNameByType[type]}" max="100">15%</progress>
   `;
+};
 
 export const trackingAlertContainer = ({ carrier, trackingNumber }) =>
   html`
