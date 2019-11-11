@@ -83,6 +83,10 @@ const trackingInfoListItem = (trackingInfo, onDeleteTrackingInfo) => {
 export const trackingInfoList = (trackingInfos, onDeleteTrackingInfo) =>
   html`
     <ul id="tracking-info-list">
-      ${trackingInfos.map((trackingInfo) => trackingInfoListItem(trackingInfo, onDeleteTrackingInfo))}
+      ${trackingInfos.length
+        ? trackingInfos.map((trackingInfo) => trackingInfoListItem(trackingInfo, onDeleteTrackingInfo))
+        : html`
+            <i>Nothing added to Postory yet. Navigate to a tracking page to track the shipment!</i>
+          `}
     </ul>
   `;
