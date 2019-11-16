@@ -1,11 +1,10 @@
 {
   "name": "Postory",
-  "version": "0.1",
+  "version": "0.0.0.1",
   "description": "Postory extension - track packages",
   "permissions": ["storage", "notifications"],
   "icons": {
-    "48": "icon48.png",
-    "128": "icon128.png"
+    "128": "postory-icon.png"
   },
   "background": {
     "scripts": ["poll.js"],
