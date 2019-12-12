@@ -16,7 +16,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "lit-html": "https://github.com/andynaguyen/lit-html#ec237e131bd92620320a3228c8bd4872edeed217",
+    "lit-html": "https://github.com/Polymer/lit-html#a5163f7caa2f6c9e72190b3a6c246b0c7750329e",
     "luxon": "^1.19.3"
   },
   "jest": {
